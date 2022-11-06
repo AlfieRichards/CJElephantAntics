@@ -105,23 +105,10 @@ public class AudioManager : MonoBehaviour
 
     public void StopAll()
     {
-        Sound m = Array.Find(music, sound => sound.name == name);
-        //custom error message when cant find clip name
-        if (m == null)
-        {
-            Debug.LogWarning("No Music Found");
-        }
-
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        //custom error message when cant find clip name
-        if (s == null)
-        {
-            Debug.LogWarning("No Sounds Playing");
-            return;
-        }
-        else{
-            m.source.Stop();
-            s.source.Stop();
+        Component[] sources;
+        sources = GetComponentsInChildren<AudioSource>();
+        foreach(AudioSource tSource in sources){
+            tSource.Stop();
         }
     }
 
