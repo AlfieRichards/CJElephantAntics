@@ -8,6 +8,9 @@ public class cursorScript : MonoBehaviour
     public Vector3 finalPosition;
     public Vector3 originPos;
 
+    float xDif;
+    float yDif;
+
     public float touchRadius = 90.01163f;
 
     private Touch touch;
@@ -15,18 +18,26 @@ public class cursorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Position used for the cube.
+        // Position used for the cursor.
         position = transform.position;
-        originPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        originPos = this.transform.parent.position;
+
+
         // Handle screen touches.
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
+
+            if(touch.phase == TouchPhase.Stationary)
+            {
+                Vector3 vecDif = new Vector3(xDif, yDif, 0.0f);
+                finalPosition = originPos + -vecDif;
+            }
 
             // Move the cube if the screen has the finger moving.
             if (touch.phase == TouchPhase.Moved)
@@ -39,11 +50,14 @@ public class cursorScript : MonoBehaviour
                 position = new Vector3(pos.x, pos.y, 0.0f);
 
                 //checks if its within range of the joystick
-                if (Vector3.Distance(originPos, pos) < touchRadius)
+                if (Vector3.Distance(this.transform.parent.position, pos) < touchRadius)
                 {
                     //positions the cursor.
                     transform.position = position;
                     finalPosition = position;
+
+                    xDif = this.transform.parent.position.x - finalPosition.x;
+                    yDif = this.transform.parent.position.y - finalPosition.y;
                 }
             }
         }

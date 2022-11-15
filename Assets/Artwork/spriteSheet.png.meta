@@ -167,7 +167,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spriteSheet_0
+      name: walk1
       rect:
         serializedVersion: 2
         x: 0
@@ -209,7 +209,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_2
+      name: fall1
       rect:
         serializedVersion: 2
         x: 64
@@ -335,7 +335,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_8
+      name: bomb1
       rect:
         serializedVersion: 2
         x: 288
@@ -356,7 +356,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_9
+      name: walk3
       rect:
         serializedVersion: 2
         x: 0
@@ -755,7 +755,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_28
+      name: die2
       rect:
         serializedVersion: 2
         x: 0
@@ -944,7 +944,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_37
+      name: explode1
       rect:
         serializedVersion: 2
         x: 69
@@ -1028,7 +1028,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_41
+      name: die3
       rect:
         serializedVersion: 2
         x: 0
@@ -1070,7 +1070,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_43
+      name: explode2
       rect:
         serializedVersion: 2
         x: 64
@@ -1196,7 +1196,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_49
+      name: jump1
       rect:
         serializedVersion: 2
         x: 0
@@ -1469,7 +1469,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_68
+      name: die1
       rect:
         serializedVersion: 2
         x: 1
@@ -1511,7 +1511,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_70
+      name: walk2
       rect:
         serializedVersion: 2
         x: 0
@@ -1595,7 +1595,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_56
+      name: explode3
       rect:
         serializedVersion: 2
         x: 64
@@ -1763,7 +1763,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet_76
+      name: bomb2
       rect:
         serializedVersion: 2
         x: 288
@@ -1771,7 +1771,7 @@ TextureImporter:
         width: 19
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1779,6 +1779,27 @@ TextureImporter:
       bones: []
       spriteID: 460e127895e3cdc4e8fa28a560cd4cd1
       internalID: 1918340413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb7edb758951bb43bb071a5ac0ef662
+      internalID: 531907600
       vertices: []
       indices: 
       edges: []
@@ -1795,12 +1816,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       spriteSheet_20: 733282580
-      spriteSheet_0: -624517821
-      spriteSheet_10: -465889355
+      spriteSheet_27: 93208616
       spriteSheet_36: -491619799
-      spriteSheet_49: -209756783
       spriteSheet_74: 109373116
-      spriteSheet_9: -1279036624
       spriteSheet_34: -1955491630
       spriteSheet_73: 1067267363
       spriteSheet_52: 204185418
@@ -1809,57 +1827,61 @@ TextureImporter:
       spriteSheet_44: 1383080921
       spriteSheet_42: -2035534869
       spriteSheet_26: -441154021
-      spriteSheet_8: -1312708736
+      bomb2: 1918340413
       spriteSheet_48: -1416528250
       spriteSheet_66: 142397894
       spriteSheet_5: -1935104412
       spriteSheet_22: 1010040545
+      die4: 531907600
       spriteSheet_12: 2141724539
+      jump1: -209756783
+      die3: 304338449
       spriteSheet_75: 781793316
       spriteSheet_18: -1494916116
+      fall1: 747551445
+      explode1: -2080983925
+      explode3: 388964896
       spriteSheet_3: -897394624
       spriteSheet_62: -2022287589
       spriteSheet_50: -1508927590
+      explode2: 107814252
       spriteSheet_46: -930168681
       spriteSheet_16: 1037496675
       spriteSheet_65: -1648315984
       spriteSheet_23: 903285976
+      walk2: -272999812
       spriteSheet_67: -1000541357
       spriteSheet_17: 466166252
       spriteSheet_21: -2026737732
-      spriteSheet_70: -272999812
-      spriteSheet_6: -905471361
+      spriteSheet_33: 1714693701
       spriteSheet_40: 1654825496
       spriteSheet_69: 225531888
-      spriteSheet_33: 1714693701
-      spriteSheet_43: 107814252
+      spriteSheet_6: -905471361
+      die2: 856816378
       spriteSheet_14: -1381645189
       spriteSheet_30: -1587904827
       spriteSheet_64: -1782768162
       spriteSheet_4: -746265625
-      spriteSheet_37: -2080983925
-      spriteSheet_41: 304338449
+      walk1: -624517821
       spriteSheet_24: -481862156
       spriteSheet_51: 1661973066
-      spriteSheet_68: -393384502
       spriteSheet_31: -2141826513
       spriteSheet_7: -446537920
       spriteSheet_53: 688385530
       spriteSheet_47: -1426700685
-      spriteSheet_76: 1918340413
       spriteSheet_38: 1853708753
       spriteSheet_1: -1405520935
       spriteSheet_61: -600993420
       spriteSheet_39: 155126409
+      die1: -393384502
       spriteSheet_63: 808666530
-      spriteSheet_2: 747551445
-      spriteSheet_28: 856816378
       spriteSheet_45: 1531176002
       spriteSheet_19: -1040991817
       spriteSheet_54: -2133094108
       spriteSheet_57: 346218903
       spriteSheet_25: 1962191862
       spriteSheet_13: -331917921
+      walk3: -1279036624
       spriteSheet_11: 941723533
       spriteSheet_29: -902082064
       spriteSheet_15: 1083823899
@@ -1868,9 +1890,9 @@ TextureImporter:
       spriteSheet_60: -930997350
       spriteSheet_72: 1238872139
       spriteSheet_55: -1978540212
-      spriteSheet_56: 388964896
+      bomb1: -1312708736
       spriteSheet_71: 1904990301
-      spriteSheet_27: 93208616
+      spriteSheet_10: -465889355
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
