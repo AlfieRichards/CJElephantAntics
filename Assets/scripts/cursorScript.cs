@@ -35,8 +35,19 @@ public class cursorScript : MonoBehaviour
 
             if(touch.phase == TouchPhase.Stationary)
             {
-                Vector3 vecDif = new Vector3(xDif, yDif, 0.0f);
-                finalPosition = originPos + -vecDif;
+                //gets touch pos
+                Vector2 pos = touch.position;
+
+                //translates touch pos to unity
+                pos = Camera.main.ScreenToWorldPoint (new Vector2 (pos.x, pos.y));
+                position = new Vector3(pos.x, pos.y, 0.0f);
+
+                //Debug.Log(Vector3.Distance(this.transform.parent.position, pos));
+                if (Vector3.Distance(this.transform.parent.position, pos) < touchRadius)
+                {
+                    Vector3 vecDif = new Vector3(xDif, yDif, 0.0f);
+                    finalPosition = originPos + -vecDif;
+                }
             }
 
             // Move the cube if the screen has the finger moving.
@@ -50,6 +61,7 @@ public class cursorScript : MonoBehaviour
                 position = new Vector3(pos.x, pos.y, 0.0f);
 
                 //checks if its within range of the joystick
+                //Debug.Log(Vector3.Distance(this.transform.parent.position, pos));
                 if (Vector3.Distance(this.transform.parent.position, pos) < touchRadius)
                 {
                     //positions the cursor.

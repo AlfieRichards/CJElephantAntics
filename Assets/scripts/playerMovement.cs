@@ -12,16 +12,28 @@ public class playerMovement : MonoBehaviour
     public float jumpPower = 1;
 
     private Rigidbody2D rb;
+
+
+    Animator anim;
+    bool falling, jumping, walking, idle;
+
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 30;
         rb = GetComponent<Rigidbody2D>();
         cursor = cursorObject.GetComponent<cursorScript>();
+        anim = gameObject.GetComponent<Animator>();
+        idle = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //does anims
+        SetAnims();
+        AnimHandler();
+        
         //calculates distance moved
         Vector2 cursorMovement = cursor.finalPosition - cursor.originPos;
 
@@ -54,6 +66,67 @@ public class playerMovement : MonoBehaviour
     {
         if(rb.velocity.y != 0){return;}
         rb.AddForce(transform.up * jumpPower);
+    }
+
+
+    void SetAnims()
+    {
+        Debug.Log(rb.velocity.x);
+        Debug.Log(rb.velocity.y);
+        if(rb.velocity.x == 0 && rb.velocity.y == 0)
+        {
+            ResetAnims();
+            Debug.Log("idle");
+            idle = true;
+            return;
+        }
+
+        if(rb.velocity.x != 0 && !jumping)
+        {
+            ResetAnims();
+            Debug.Log("walking");
+            walking = true;
+            return;
+        }
+
+        if(rb.velocity.y > 0)
+        {
+            ResetAnims();
+            Debug.Log("jumping");
+            jumping = true;
+            return;
+        }
+
+        if(rb.velocity.y < 0)
+        {
+            ResetAnims();
+            Debug.Log("falling");
+            falling = true;
+            return;
+        }
+    }
+    
+    void AnimHandler()
+    {
+        if(idle){anim.SetBool("idle", true);}
+
+        if(walking){anim.SetBool("walk", true);}
+
+        if(jumping){anim.SetBool("jump", true);}
+
+        if(falling){anim.SetBool("fall", true);}
+    }
+
+    void ResetAnims()
+    {
+        anim.SetBool("idle", false);
+        anim.SetBool("walk", false);
+        anim.SetBool("jump", false);
+        anim.SetBool("fall", false);
+        idle = false;
+        walking = false;
+        jumping = false;
+        falling = false;
     }
 
     void flip(int direction)
