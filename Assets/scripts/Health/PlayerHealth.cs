@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int startingHealth;
     public int currentHealth;
+    public int lives;
+
+    public TextMeshProUGUI livesText;
+
     public GameObject thePlayer;
     public HealthBar healthBar;
 
@@ -14,16 +19,23 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = startingHealth;
         healthBar.SetMaxHealth(startingHealth);
+        livesText.text = lives.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && lives != 0)
+        {
+            lives--;
+            livesText.text = lives.ToString();
+            currentHealth = startingHealth;
+        }
+        if (currentHealth <= 0 && lives == 0)
         {
             thePlayer.SetActive(false);
         }
-
+        
         healthBar.SetHealth(currentHealth);
 
     }
@@ -32,15 +44,4 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            Debug.Log("OW");
-        }
-
-        Debug.Log("TouchedPlayer");
-    }
-
 }
