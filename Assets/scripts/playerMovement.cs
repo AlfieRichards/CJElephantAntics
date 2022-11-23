@@ -71,12 +71,12 @@ public class playerMovement : MonoBehaviour
 
     void SetAnims()
     {
-        Debug.Log(rb.velocity.x);
-        Debug.Log(rb.velocity.y);
+        //Debug.Log(rb.velocity.x);
+        //Debug.Log(rb.velocity.y);
         if(rb.velocity.x == 0 && rb.velocity.y == 0)
         {
             ResetAnims();
-            Debug.Log("idle");
+            //Debug.Log("idle");
             idle = true;
             return;
         }
@@ -84,7 +84,7 @@ public class playerMovement : MonoBehaviour
         if(rb.velocity.x != 0 && !jumping)
         {
             ResetAnims();
-            Debug.Log("walking");
+            //Debug.Log("walking");
             walking = true;
             return;
         }
@@ -92,7 +92,7 @@ public class playerMovement : MonoBehaviour
         if(rb.velocity.y > 0)
         {
             ResetAnims();
-            Debug.Log("jumping");
+            //Debug.Log("jumping");
             jumping = true;
             return;
         }
@@ -100,7 +100,7 @@ public class playerMovement : MonoBehaviour
         if(rb.velocity.y < 0)
         {
             ResetAnims();
-            Debug.Log("falling");
+            //Debug.Log("falling");
             falling = true;
             return;
         }
