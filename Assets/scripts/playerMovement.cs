@@ -64,7 +64,7 @@ public class playerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if(rb.velocity.y != 0){return;}
+        if(rb.velocity.y > 0.5 || rb.velocity.y < -0.5){return;}
         rb.AddForce(transform.up * jumpPower);
     }
 
@@ -97,7 +97,7 @@ public class playerMovement : MonoBehaviour
             return;
         }
 
-        if(rb.velocity.y < 0)
+        if(rb.velocity.y < -1)
         {
             ResetAnims();
             //Debug.Log("falling");
