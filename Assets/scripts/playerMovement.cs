@@ -58,8 +58,8 @@ public class playerMovement : MonoBehaviour
         rb.velocity = new Vector2(tSpeed, rb.velocity.y);
 
         //flips sprite to face correct direction
-        if(rb.velocity.x > 0){ flip(1);}
-        if(rb.velocity.x < 0){ flip(0);}
+        if(rb.velocity.x > 0.5){ flip(1);}
+        if(rb.velocity.x < -0.5){ flip(0);}
     }
 
     public void Jump()

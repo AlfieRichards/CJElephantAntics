@@ -16,7 +16,16 @@ public class bombScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
-        rb.velocity = new Vector2(3f, 5f);
+        
+        GameObject player = GameObject.Find("Player");
+        if(player.transform.localScale.x < 0)
+        {
+            rb.velocity = new Vector2(-3f, 5f);
+        }
+        else
+        {
+            rb.velocity = new Vector2(3f, 5f);
+        }
     }
 
     float timePassed = 0f;

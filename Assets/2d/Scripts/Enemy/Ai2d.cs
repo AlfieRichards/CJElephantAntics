@@ -78,7 +78,7 @@ public class Ai2d : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(damage);
-            Debug.Log("Touched Player");
+            //Debug.Log("Touched Player");
         }
     }
 
@@ -87,7 +87,7 @@ public class Ai2d : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(damage);
-            Debug.Log("Touching Player");
+            //Debug.Log("Touching Player");
         }
     }
 

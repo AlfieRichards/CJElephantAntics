@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: thePlayer
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5487720288872579255, guid: b8ca99f3adf6734498b8322efdf6ad2a, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5487720289414914124, guid: b8ca99f3adf6734498b8322efdf6ad2a, type: 3}
       propertyPath: m_Name
       value: Enemy Variant
